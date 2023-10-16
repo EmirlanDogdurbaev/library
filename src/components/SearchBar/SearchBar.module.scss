@@ -1,0 +1,40 @@
+.SearchBar {
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+
+    span{
+     display: flex;
+
+     input{
+      padding: 10px 15px;
+      width: 550px;
+      border: 1px solid black ;
+      border-right: none;
+      border-radius: 5px 0 0 5px
+      ;
+      outline: none
+     };
+     button{
+      background-color: white;
+      border: 1px solid black;
+      border-left: none;
+      padding: 0 15px 0 0 ;
+      border-radius: 0px 5px 5px 0px;
+     }
+    }
+    a{
+      img{
+            width: 50px;
+            margin-top: 5px;
+      }
+    }
+  }
+}
