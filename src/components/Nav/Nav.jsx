@@ -106,8 +106,8 @@ const Nav = () => {
         </ul>
       </div>
       <div className={cl.btns}>
-        <button>Log</button>
-        <button>Reg</button>
+        <button>Log In</button>
+        <button>Register</button>
       </div>
     </nav>
   );
