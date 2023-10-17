@@ -1,0 +1,11 @@
+.Home {
+  width: 100%;
+  background-image: url(../../assets//images/home.png);
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+  }
+}
