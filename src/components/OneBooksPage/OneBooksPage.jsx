@@ -6,7 +6,7 @@ const OneBookPage = () => {
     <div className={cl.OneBookPage}>
       <section>
         <Book />
-        <h3>Отзывы</h3>
+        <h3 className={cl.response}>Отзывы</h3>
         <div className={cl.comment_cont}>
           <Comment />
           <Comment />
