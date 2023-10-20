@@ -22,7 +22,6 @@
     border-radius: 5px;
     background-color: white;
 
-
     svg {
       width: 100px;
       height: 100px;
@@ -42,29 +41,52 @@
     }
   }
 
+  @media screen and (min-width: 1600px) {
+    .avatar {
+      width: 390px;
+      h3{
+        font-size: 28px;
+        font-weight: 300;
+      }
+
+      h5{
+        font-size: 20px;
+      }
+
+      p{
+        font-size: 18px;
+      }
+    }
+  }
+
   .cont {
     display: flex;
     flex-direction: column;
   }
 }
 
-
-
-@media screen and (min-width: 1382px) {
-  .avatar {
-    width: 390px;
-  }
-}
-
-
-@media screen and (min-width: 1355px) {
+@media screen and (width: 1355px) {
   .avatar {
     width: 354px;
   }
 }
 
-@media screen and (min-width: 1235px) {
+@media screen and (width: 1235px) {
   .avatar {
     width: 327px;
+  }
+}
+
+@media screen and (max-width: 1234px) {
+  .Profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .cont {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
   }
 }
