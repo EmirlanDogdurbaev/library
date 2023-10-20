@@ -13,12 +13,14 @@ function App() {
       <Nav />
       <div className="body">
         <SearchBar />
+        <div className="rightBody">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/create-comment" element={<CommentForm />} />
         </Routes>
+        </div>
       </div>
     </div>
   );

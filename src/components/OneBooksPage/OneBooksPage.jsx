@@ -10,6 +10,14 @@ const OneBookPage = () => {
         <div className={cl.comment_cont}>
           <Comment />
           <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
         </div>
       </section>
     </div>
