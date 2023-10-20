@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import styles from './Auth.module.scss'
+import styles from "./Auth.module.scss";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 export default function Login() {
@@ -14,8 +14,6 @@ export default function Login() {
       password,
     });
   }
-  
-
   return (
     <div className={styles.Auth}>
       <label htmlFor="email">Email</label>
@@ -37,7 +35,7 @@ export default function Login() {
       />
 
       <Button action={login}>Войти</Button>
-      <Link to={'/register'}>Создать аккаунт</Link>
+      <Link to={"/register"}>Создать аккаунт</Link>
     </div>
   );
 }

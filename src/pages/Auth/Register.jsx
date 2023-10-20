@@ -23,7 +23,6 @@ export default function Register() {
       localStorage.setItem('access', res.data.access_token);
     });
   }
-
   return (
     <div className={styles.Auth}>
       <label htmlFor="email">Email</label>

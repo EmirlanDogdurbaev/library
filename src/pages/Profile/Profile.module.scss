@@ -22,6 +22,7 @@
     border-radius: 5px;
     background-color: white;
 
+
     svg {
       width: 100px;
       height: 100px;
@@ -44,5 +45,26 @@
   .cont {
     display: flex;
     flex-direction: column;
+  }
+}
+
+
+
+@media screen and (min-width: 1382px) {
+  .avatar {
+    width: 390px;
+  }
+}
+
+
+@media screen and (min-width: 1355px) {
+  .avatar {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1235px) {
+  .avatar {
+    width: 327px;
   }
 }
