@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import cl from "./Nav.module.scss";
 const Nav = () => {
   return (
@@ -106,8 +106,8 @@ const Nav = () => {
         </ul>
       </div>
       <div className={cl.btns}>
-        <button>Log In</button>
-        <button>Register</button>
+        <button><Link to={"/login"}>Login</Link></button>
+        <button><Link to={"/register"}>Register</Link></button>
       </div>
     </nav>
   );
