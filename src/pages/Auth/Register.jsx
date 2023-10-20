@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import styles from './Auth.module.scss'
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
@@ -69,7 +71,8 @@ export default function Register() {
         value={phone}
       />
 
-      <button onClick={register}>Register</button>
+      <Button action={register}>Ресистрация</Button>
+      <Link to={'/login'}>Уже есть аккаунт</Link>
     </div>
   );
 }

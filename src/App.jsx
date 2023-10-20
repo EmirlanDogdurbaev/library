@@ -9,6 +9,7 @@ import CommentForm from "./pages/CommentForm/CommentForm";
 import { Logger } from "sass";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
+import AuthForm from "./components/AuthForm/AuthForm";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<AuthForm><Login /></AuthForm>} />
+          <Route path="/register" element={<AuthForm><Register/></AuthForm>} />
           <Route path="/create-comment" element={<CommentForm />} />
         </Routes>
         </div>

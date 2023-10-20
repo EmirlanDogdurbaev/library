@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import styles from './Auth.module.scss'
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
@@ -34,7 +36,8 @@ export default function Login() {
         value={password}
       />
 
-      <button onClick={login}>Login</button>
+      <Button action={login}>Войти</Button>
+      <Link to={'/register'}>Создать аккаунт</Link>
     </div>
   );
 }
