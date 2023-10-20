@@ -1,23 +1,25 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import styles from './Auth.module.scss'
+import styles from "./Auth.module.scss";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../main";
 import { observer } from "mobx-react-lite";
- function Register() {
+function Register() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
 
-  const {store} = useContext(Context)
+  const { store } = useContext(Context);
 
-  function register(){
-    store.register(email, password, firstName, lastName, phone)
+  function register() {
+    store
+      .register(email, password, firstName, lastName, phone)
+      .then(() => location.reload());
   }
   return (
     <div className={styles.Auth}>
@@ -67,8 +69,8 @@ import { observer } from "mobx-react-lite";
       />
 
       <Button action={register}>Ресистрация</Button>
-      <Link to={'/login'}>Уже есть аккаунт</Link>
+      <Link to={"/login"}>Уже есть аккаунт</Link>
     </div>
   );
 }
-export default observer(Register)
+export default observer(Register);

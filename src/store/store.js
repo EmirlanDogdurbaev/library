@@ -6,31 +6,28 @@ export default class Store {
   constructor() {
     makeAutoObservable(this);
   }
-
-  user = {};
-  isAuthed = false;
-
-  setUser(user){
-    this.user = user
+  checkAuth() {
+    return localStorage.getItem("token");
   }
-  setAuthed(bool){
-    this.isAuthed = bool
-  }
-  
-  async login(email, password){
+  async login(email, password) {
     try {
-      const response = await axios.post(`${api}/login/`, {email, password});
-      localStorage.setItem("access", response.data.access_token)
-      this.setAuthed(true)
+      const response = await axios.post(`${api}/login/`, { email, password });
+      localStorage.setItem("token", response.data.access_token);
     } catch (e) {
       console.error(e);
     }
   }
-  async register(email, password, first_name, last_name, phone){
+  async register(email, password, first_name, last_name, phone) {
     try {
-      const response = await axios.post(`${api}/register/`, {email, password, first_name, last_name, phone});
-      localStorage.setItem("access", response.data.access_token)
-      this.setAuthed(true)
+      const response = await axios.post(`${api}/register/`, {
+        email,
+        password,
+        first_name,
+        last_name,
+        phone,
+      });
+      localStorage.setItem("token", response.data.access_token);
+
     } catch (e) {
       console.error(e);
     }

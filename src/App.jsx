@@ -12,33 +12,51 @@ import Login from "./pages/Auth/Login";
 import AuthForm from "./components/AuthForm/AuthForm";
 import { useContext } from "react";
 import { Context } from "./main";
+import Redirect from "./pages/Redirect/Redirect";
 
 function App() {
-  const {store} = useContext(Context)
+  const { store } = useContext(Context);
   return (
     <div className="main">
-      <div className="nav">
-        <Nav />
-      </div>
-      <div className="body">
-        <SearchBar />
-        <div className="rightBody">
+      {!store.checkAuth()
+        ?<>
         <Routes>
-          {store.isAuthed
-          ?
-          <>
-          <Route path="/login" element={<AuthForm><Login/></AuthForm>} />
-          <Route path="/register" element={<AuthForm><Register/></AuthForm>} />
-          </>
-          :
-          <>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile/>}/>
-          <Route path="/create-comment" element={<CommentForm />}/>
-          </>}
+          <Route path="*" element={<Redirect where={'login'}/>}/>
+          <Route
+            path="/login"
+            element={
+              <AuthForm>
+                <Login />
+              </AuthForm>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <AuthForm>
+                <Register />
+              </AuthForm>
+            }
+          />
         </Routes>
+      </>
+      :
+      <>
+        <div className="nav">
+          <Nav />
         </div>
-      </div>
+        <div className="body">
+          <SearchBar />
+          <div className="rightBody">
+            <Routes>
+              <Route path="/" index element={<Home />} />
+              <Route path="*" element={<Redirect where={''} />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/create-comment" element={<CommentForm />} />
+            </Routes>
+          </div>
+        </div>
+      </>}
     </div>
   );
 }

@@ -1,19 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import styles from './Auth.module.scss'
+import styles from "./Auth.module.scss";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../main";
 import { observer } from "mobx-react-lite";
- function Login() {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
 
-  const {store} = useContext(Context)
-  
-  function login(){
-    store.login(email, password)
+  const { store } = useContext(Context);
+  function login() {
+    store
+      .login(email, password)
+      .then(() => location.reload());
   }
 
   return (
@@ -37,9 +38,9 @@ import { observer } from "mobx-react-lite";
       />
 
       <Button action={login}>Войти</Button>
-      <Link to={'/register'}>Создать аккаунт</Link>
+      <Link to={"/register"}>Создать аккаунт</Link>
     </div>
   );
 }
 
-export default observer(Login)
+export default observer(Login);
