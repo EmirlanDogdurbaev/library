@@ -2,19 +2,15 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import styles from './Auth.module.scss'
-export default function Auth() {
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
+export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
 
-  function login() {
-    axios.post("http://192.168.88.71:8000/api/v1/login/", {
-      email,
-      password,
-    });
-  }
   function register() {
     axios.post("http://192.168.88.71:8000/api/v1/register/", {
       email,
@@ -75,7 +71,8 @@ export default function Auth() {
         value={phone}
       />
 
-      <button onClick={register}>Register</button>
+      <Button action={register}>Ресистрация</Button>
+      <Link to={'/login'}>Уже есть аккаунт</Link>
     </div>
   );
 }
