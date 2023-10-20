@@ -1,0 +1,48 @@
+.Profile {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  min-height: 90vh;
+
+  .avatar {
+    padding: 15px 10px;
+    margin: 20px;
+    width: 327px;
+    height: 307px;
+    flex-shrink: 0;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.423);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    h3 {
+      color: #787878;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    h5 {
+      color: #749bff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  .cont {
+    display: flex;
+    flex-direction: column;
+  }
+}

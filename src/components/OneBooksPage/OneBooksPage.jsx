@@ -11,12 +11,7 @@ const OneBookPage = () => {
           <Comment />
           <Comment />
           <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
+
           <Comment />
         </div>
       </section>

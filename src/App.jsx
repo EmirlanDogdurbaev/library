@@ -10,16 +10,18 @@ import CommentForm from "./pages/CommentForm/CommentForm";
 function App() {
   return (
     <div className="main">
-      <Nav />
+      <div className="nav">
+        <Nav />
+      </div>
       <div className="body">
         <SearchBar />
         <div className="rightBody">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Auth />} />
-          <Route path="/create-comment" element={<CommentForm />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Auth />} />
+            <Route path="/create-comment" element={<CommentForm />} />
+          </Routes>
         </div>
       </div>
     </div>
