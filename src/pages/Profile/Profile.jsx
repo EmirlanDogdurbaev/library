@@ -26,9 +26,7 @@ const Profile = () => {
       <div className={cl.cont}>
         <Order />
         <Order />
-
         <Order />
-
       </div>
     </div>
   );

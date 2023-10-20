@@ -16,7 +16,6 @@ function Login() {
       .login(email, password)
       .then(() => location.reload());
   }
-
   return (
     <div className={styles.Auth}>
       <label htmlFor="email">Email</label>
