@@ -10,8 +10,11 @@ import { Logger } from "sass";
 import Register from "./pages/Auth/Register";
 import Login from "./pages/Auth/Login";
 import AuthForm from "./components/AuthForm/AuthForm";
+import { useContext } from "react";
+import { Context } from "./main";
 
 function App() {
+  const {store} = useContext(Context)
   return (
     <div className="main">
       <Nav />
@@ -19,11 +22,18 @@ function App() {
         <SearchBar />
         <div className="rightBody">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<AuthForm><Login /></AuthForm>} />
+          {store.isAuthed
+          ?
+          <>
+          <Route path="/login" element={<AuthForm><Login/></AuthForm>} />
           <Route path="/register" element={<AuthForm><Register/></AuthForm>} />
-          <Route path="/create-comment" element={<CommentForm />} />
+          </>
+          :
+          <>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/create-comment" element={<CommentForm />}/>
+          </>}
         </Routes>
         </div>
       </div>

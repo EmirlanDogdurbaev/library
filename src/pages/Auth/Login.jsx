@@ -1,20 +1,20 @@
-import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import styles from './Auth.module.scss'
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
-export default function Login() {
+import { useContext } from "react";
+import { Context } from "../../main";
+import { observer } from "mobx-react-lite";
+ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
 
-  function login() {
-    axios.post("http://192.168.88.71:8000/api/v1/login/", {
-      email,
-      password,
-    });
-  }
+  const {store} = useContext(Context)
   
+  function login(){
+    store.login(email, password)
+  }
 
   return (
     <div className={styles.Auth}>
@@ -41,3 +41,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default observer(Login)

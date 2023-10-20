@@ -4,26 +4,21 @@ import { useState } from "react";
 import styles from './Auth.module.scss'
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
-export default function Register() {
+import { useContext } from "react";
+import { Context } from "../../main";
+import { observer } from "mobx-react-lite";
+ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPasssword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
 
-  function register() {
-    axios.post("http://192.168.88.71:8000/api/v1/register/", {
-      email,
-      password,
-      first_name:firstName,
-      last_name:lastName,
-      phone,
-    })
-    .then((res)=>{
-      localStorage.setItem('access', res.data.access_token);
-    });
-  }
+  const {store} = useContext(Context)
 
+  function register(){
+    store.register(email, password, firstName, lastName, phone)
+  }
   return (
     <div className={styles.Auth}>
       <label htmlFor="email">Email</label>
@@ -76,3 +71,4 @@ export default function Register() {
     </div>
   );
 }
+export default observer(Register)
