@@ -12,13 +12,27 @@
 }
 
 .main {
+  width: 100%;
+  height: 100%;
   display: flex;
+  overflow: hidden !important;
+  justify-content: space-between;
+  position: relative;
 }
-
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 80%;
+  overflow-y: scroll;
+  margin-left: 20%;
+}
+
+.rightBody{
   width: 100%;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  background-color: #eff7fc;
+  display: flex;
+  flex-direction: column;
 }

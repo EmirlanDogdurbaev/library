@@ -11,7 +11,6 @@ const OneBookPage = () => {
           <Comment />
           <Comment />
           <Comment />
-          <Comment />
         </div>
       </section>
     </div>

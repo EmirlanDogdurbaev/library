@@ -1,14 +1,14 @@
 .SearchBar {
-  width: 100%;
+  width: 80% ;
   height: auto;
-  padding: 10px 0 0  0;
+  padding: 5px 0px 10px 0px;
+  position: fixed;
+  background-color: white;
 
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
 
     span{
      display: flex;
