@@ -17,7 +17,9 @@ function App() {
   const {store} = useContext(Context)
   return (
     <div className="main">
-      <Nav />
+      <div className="nav">
+        <Nav />
+      </div>
       <div className="body">
         <SearchBar />
         <div className="rightBody">
