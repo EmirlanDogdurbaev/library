@@ -1,4 +1,5 @@
 import BookCard from "../../components/BookCard/BookCard";
+import Book from "../../components/OneBooksPage/Book/Book";
 import cl from "./Home.module.scss";
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
           <BookCard />
           <BookCard />
           <BookCard />
+
+          
         </div>
       </section>
     </>
